@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+        "projectName": "MoviesAPI",
+        "projectPath": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+        "packagesPath": "C:\\Users\\mlima\\.nuget\\packages\\",
+        "outputPath": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mlima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Veripag\\Repositories\\Cyclopay\\cyclo-util-package\\CycloUtilPackage\\bin\\Debug": {},
+          "https://pkgs.dev.azure.com/veripagdevops/cyclopay/_packaging/cyclo-packages/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

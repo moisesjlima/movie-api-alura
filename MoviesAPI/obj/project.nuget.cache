@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "U5QIrPwLwhotDk3jZ7gUWn+h+E/r8ZjO8Lu6mgsocaob4av1bPa0toubvaRajznd9BetA4xYjP0nZ5Cu39HaXA==",
+  "success": true,
+  "projectFilePath": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mlima\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\mlima\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\mlima\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\mlima\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\mlima\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\mlima\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
