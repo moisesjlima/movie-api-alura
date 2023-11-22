@@ -13,12 +13,14 @@ public class MovieController : ControllerBase
     [HttpPost]
     public void AddMovie([FromBody] Movie movie)
     {
-        //if (!string.IsNullOrEmpty(movie.Title) && !string.IsNullOrEmpty(movie.Genre) && (movie.Duration > 0 && movie.Duration <= 300))
-        //{ }
         movies.Add(movie);
         Console.WriteLine("Title: " + movie.Title);
         Console.WriteLine("Duration: " + movie.Duration);
+    }
 
-
+    [HttpGet]
+    public IEnumerable<Movie> GetMovies()
+    {
+        return movies;
     }
 }
