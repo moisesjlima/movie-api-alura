@@ -4,6 +4,9 @@ namespace MoviesAPI.Models;
 
 public class Movie
 {
+    [Key]
+    public int MovieId { get; set; }
+
     [Required(ErrorMessage = "field title is required")]
     [MaxLength(60, ErrorMessage = "max length 60")]
     public string Title { get; set; } = string.Empty;
