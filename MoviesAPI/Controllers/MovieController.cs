@@ -55,7 +55,7 @@ public class MovieController : ControllerBase
     }
 
     [HttpGet("{movieId}")]
-    public IActionResult GetMoviesById([FromRoute] int movieId)
+    public IActionResult GetMovieById([FromRoute] int movieId)
     {
         var movie = _context.Movies.FirstOrDefault(x => x.MovieId == movieId);
 
@@ -105,7 +105,7 @@ public class MovieController : ControllerBase
     }
 
     [HttpDelete("{movieId}")]
-    public IActionResult UpdateMovie([FromRoute] int movieId)
+    public IActionResult DeleteMovie([FromRoute] int movieId)
     {
         var movie = _context.Movies.FirstOrDefault(x => x.MovieId == movieId);
 
