@@ -20,9 +20,10 @@ public class MovieController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult AddMovie([FromBody] CreateMovieDto movieModel)
+    public IActionResult AddMovie([FromBody] CreateMovieDto movieDto)
     {
-        var movie = _mapper.Map<Movie>(movieModel);
+        var movie = _mapper.Map<Movie>(movieDto);
+
         _context.Movies.Add(movie);
         _context.SaveChanges();
 
@@ -48,5 +49,20 @@ public class MovieController : ControllerBase
             return NotFound();
 
         return Ok(movieMap);
+    }
+
+    [HttpPut("{movieId}")]
+    public IActionResult UpdateMovie([FromRoute] int movieId, [FromBody] UpdateMovieDto movieDto)
+    {
+        var movie = _context.Movies.FirstOrDefault(x => x.MovieId == movieId);
+
+        if (movie == null)
+            return NotFound();
+
+        var movieMap = _mapper.Map(movieDto, movie);
+
+        _context.SaveChanges();
+
+        return NoContent();
     }
 }
