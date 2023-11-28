@@ -20,7 +20,14 @@ public class MovieController : ControllerBase
         _mapper = mapper;
     }
 
+    /// <summary>
+    /// Add a movie in DB
+    /// </summary>
+    /// <param name="movieDto">object required to create a movie</param>
+    /// <returns>IAcstionResult</returns>
+    /// <response code="201">in case of success</response>
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult AddMovie([FromBody] CreateMovieDto movieDto)
     {
         var movie = _mapper.Map<Movie>(movieDto);
@@ -31,7 +38,15 @@ public class MovieController : ControllerBase
         return CreatedAtAction(nameof(GetMoviesById), new { movieId = movie.MovieId }, movie);
     }
 
+    /// <summary>
+    /// return all movies added in DB
+    /// </summary>
+    /// <param name="skip">skip pagination - page of quantity defined in take param</param>
+    /// <param name="take">take pagination - quantity to return in page</param>
+    /// <returns>IAcstionResult</returns>
+    /// <response code="200">in case of success</response>
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IEnumerable<ReadMovieDto> GetMovies([FromQuery] int skip = 0, [FromQuery] int take = 50)
     {
         var movies = _context.Movies.Skip(skip).Take(take);
