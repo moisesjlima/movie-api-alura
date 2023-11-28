@@ -35,7 +35,7 @@ public class MovieController : ControllerBase
         _context.Movies.Add(movie);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(GetMoviesById), new { movieId = movie.MovieId }, movie);
+        return CreatedAtAction(nameof(GetMovieById), new { movieId = movie.MovieId }, movie);
     }
 
     /// <summary>
