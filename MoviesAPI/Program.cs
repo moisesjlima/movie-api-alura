@@ -18,6 +18,8 @@ public class Program
 
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+        builder.Services.AddControllers().AddNewtonsoftJson();
+
         builder.Services.AddControllers();
 
         builder.Services.AddEndpointsApiExplorer();
