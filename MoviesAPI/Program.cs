@@ -15,7 +15,8 @@ public class Program
 
         builder.Services.AddDbContext<MovieContext>(opts =>
         {
-            opts.UseMySql(MovieCon, ServerVersion.AutoDetect(MovieCon));
+            opts.UseLazyLoadingProxies()
+            .UseMySql(MovieCon, ServerVersion.AutoDetect(MovieCon));
         });
 
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

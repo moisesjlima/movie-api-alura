@@ -12,6 +12,6 @@ namespace MoviesAPI.Models
 
         public int Number { get; set; }
 
-        public MovieTheater MovieTheater { get; set; }
+        public virtual MovieTheater MovieTheater { get; set; }
     }
 }

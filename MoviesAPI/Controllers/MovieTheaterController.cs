@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MoviesAPI.Data;
 using MoviesAPI.Data.Dtos;
 using MoviesAPI.Models;
@@ -27,17 +28,18 @@ public class MovieTheaterController : ControllerBase
         _context.MovieTheaters.Add(movieTheater);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(GetMovieById), new { movieTheaterId = movieTheater.MovieTheaterId }, movieTheater);
+        return CreatedAtAction(nameof(GetMovieTheaterById), new { movieTheaterId = movieTheater.MovieTheaterId }, movieTheater);
     }
 
     [HttpGet]
-    public IEnumerable<ReadMovieTheaterDto> GetMovies()
+    public IEnumerable<ReadMovieTheaterDto> GetMovieTheaters()
     {
-        return _mapper.Map<List<ReadMovieTheaterDto>>(_context.MovieTheaters.ToList());
+        var movieTheaterList = _context.MovieTheaters.ToList();
+        return _mapper.Map<List<ReadMovieTheaterDto>>(movieTheaterList);
     }
 
     [HttpGet("{movieTheaterId}")]
-    public IActionResult GetMovieById(int movieTheaterId)
+    public IActionResult GetMovieTheaterById(int movieTheaterId)
     {
 
         MovieTheater movieTheater = _context.MovieTheaters.FirstOrDefault(movieTheater => movieTheater.MovieTheaterId == movieTheaterId);

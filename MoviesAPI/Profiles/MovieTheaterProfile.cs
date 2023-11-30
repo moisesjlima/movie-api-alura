@@ -8,7 +8,10 @@ public class MovieTheaterProfile : Profile
 {
     public MovieTheaterProfile()
     {
-        CreateMap<MovieTheater, ReadMovieTheaterDto>();
+        CreateMap<MovieTheater, ReadMovieTheaterDto>()
+            .ForMember(movieDto => movieDto.Address,
+            opt => opt.MapFrom(movie => movie.Address));
+
         CreateMap<CreateMovieTheaterDto, MovieTheater>().ReverseMap();
         CreateMap<UpdateMovieTheaterDto, MovieTheater>().ReverseMap();
     }
