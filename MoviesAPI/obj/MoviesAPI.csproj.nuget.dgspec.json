@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj": {}
+    "C:\\Alura\\3 - .NET 6 relacionando entidades\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj": {}
   },
   "projects": {
-    "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj": {
+    "C:\\Alura\\3 - .NET 6 relacionando entidades\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+        "projectUniqueName": "C:\\Alura\\3 - .NET 6 relacionando entidades\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
         "projectName": "MoviesAPI",
-        "projectPath": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+        "projectPath": "C:\\Alura\\3 - .NET 6 relacionando entidades\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
         "packagesPath": "C:\\Users\\mlima\\.nuget\\packages\\",
-        "outputPath": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\obj\\",
+        "outputPath": "C:\\Alura\\3 - .NET 6 relacionando entidades\\MoviesAPI\\MoviesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mlima\\AppData\\Roaming\\NuGet\\NuGet.Config",
