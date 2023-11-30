@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JjF9AkWjwBLWbocLpWFMx5VSLVwCtpXn9at9iRKN+UHyjMaubxvXto8ru8lT74vSYuVFnift8z9VxH2YO6ZAjA==",
+  "dgSpecHash": "zkgXh9RHt6zznto5tXU0k91KTtzdtZqVp99kTbcI9M00gH9QyK+fG0OuZG3S+8mpBIS0wbZ9ZP0IWuiF5TWoiA==",
   "success": true,
-  "projectFilePath": "C:\\Alura\\2 - .Net 6 - Criando uma Web API\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+  "projectFilePath": "C:\\Alura\\3 - .NET 6 relacionando entidades\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mlima\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\mlima\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
