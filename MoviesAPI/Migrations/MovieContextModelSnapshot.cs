@@ -6,98 +6,129 @@ using MoviesAPI.Data;
 
 #nullable disable
 
-namespace MoviesAPI.Migrations
+namespace MoviesAPI.Migrations;
+
+[DbContext(typeof(MovieContext))]
+partial class MovieContextModelSnapshot : ModelSnapshot
 {
-    [DbContext(typeof(MovieContext))]
-    partial class MovieContextModelSnapshot : ModelSnapshot
+    protected override void BuildModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.10")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+        modelBuilder
+            .HasAnnotation("ProductVersion", "6.0.10")
+            .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("MoviesAPI.Models.Address", b =>
-                {
-                    b.Property<int>("AddressId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+        modelBuilder.Entity("MoviesAPI.Models.Address", b =>
+            {
+                b.Property<int>("AddressId")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
+                b.Property<int>("Number")
+                    .HasColumnType("int");
 
-                    b.Property<string>("PublicArea")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                b.Property<string>("PublicArea")
+                    .IsRequired()
+                    .HasColumnType("longtext");
 
-                    b.HasKey("AddressId");
+                b.HasKey("AddressId");
 
-                    b.ToTable("Addresses");
-                });
+                b.ToTable("Addresses");
+            });
 
-            modelBuilder.Entity("MoviesAPI.Models.Movie", b =>
-                {
-                    b.Property<int>("MovieId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+        modelBuilder.Entity("MoviesAPI.Models.Movie", b =>
+            {
+                b.Property<int>("MovieId")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
+                b.Property<int>("Duration")
+                    .HasColumnType("int");
 
-                    b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60)");
+                b.Property<string>("Genre")
+                    .IsRequired()
+                    .HasMaxLength(60)
+                    .HasColumnType("varchar(60)");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60)");
+                b.Property<string>("Title")
+                    .IsRequired()
+                    .HasMaxLength(60)
+                    .HasColumnType("varchar(60)");
 
-                    b.HasKey("MovieId");
+                b.HasKey("MovieId");
 
-                    b.ToTable("Movies");
-                });
+                b.ToTable("Movies");
+            });
 
-            modelBuilder.Entity("MoviesAPI.Models.MovieTheater", b =>
-                {
-                    b.Property<int>("MovieTheaterId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+        modelBuilder.Entity("MoviesAPI.Models.MovieTheater", b =>
+            {
+                b.Property<int>("MovieTheaterId")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
+                b.Property<int>("AddressId")
+                    .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("longtext");
 
-                    b.HasKey("MovieTheaterId");
+                b.HasKey("MovieTheaterId");
 
-                    b.HasIndex("AddressId")
-                        .IsUnique();
+                b.HasIndex("AddressId")
+                    .IsUnique();
 
-                    b.ToTable("MovieTheaters");
-                });
+                b.ToTable("MovieTheaters");
+            });
 
-            modelBuilder.Entity("MoviesAPI.Models.MovieTheater", b =>
-                {
-                    b.HasOne("MoviesAPI.Models.Address", "Address")
-                        .WithOne("MovieTheater")
-                        .HasForeignKey("MoviesAPI.Models.MovieTheater", "AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+        modelBuilder.Entity("MoviesAPI.Models.Session", b =>
+            {
+                b.Property<int>("SessionId")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    b.Navigation("Address");
-                });
+                b.Property<int>("MovieId")
+                    .HasColumnType("int");
 
-            modelBuilder.Entity("MoviesAPI.Models.Address", b =>
-                {
-                    b.Navigation("MovieTheater")
-                        .IsRequired();
-                });
+                b.HasKey("SessionId");
+
+                b.HasIndex("MovieId");
+
+                b.ToTable("Sessions");
+            });
+
+        modelBuilder.Entity("MoviesAPI.Models.MovieTheater", b =>
+            {
+                b.HasOne("MoviesAPI.Models.Address", "Address")
+                    .WithOne("MovieTheater")
+                    .HasForeignKey("MoviesAPI.Models.MovieTheater", "AddressId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.Navigation("Address");
+            });
+
+        modelBuilder.Entity("MoviesAPI.Models.Session", b =>
+            {
+                b.HasOne("MoviesAPI.Models.Movie", "Movie")
+                    .WithMany("Session")
+                    .HasForeignKey("MovieId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.Navigation("Movie");
+            });
+
+        modelBuilder.Entity("MoviesAPI.Models.Address", b =>
+            {
+                b.Navigation("MovieTheater")
+                    .IsRequired();
+            });
+
+        modelBuilder.Entity("MoviesAPI.Models.Movie", b =>
+            {
+                b.Navigation("Session");
+            });
 #pragma warning restore 612, 618
-        }
     }
 }

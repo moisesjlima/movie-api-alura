@@ -1,11 +1,10 @@
-﻿namespace MoviesAPI.Data.Dtos
+﻿namespace MoviesAPI.Data.Dtos;
+
+public class ReadMovieTheaterDto
 {
-    public class ReadMovieTheaterDto
-    {
-        public int MovieTheaterId { get; set; }
+    public int MovieTheaterId { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public ReadAddressDto Address { get; set; }
-    }
+    public ReadAddressDto Address { get; set; }
 }

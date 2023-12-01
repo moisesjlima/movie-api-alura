@@ -1,13 +1,12 @@
-﻿namespace MoviesAPI.Data.Dtos
+﻿namespace MoviesAPI.Data.Dtos;
+
+public class ReadMovieDto
 {
-    public class ReadMovieDto
-    {
-        public string Title { get; set; } = string.Empty;
+    public string Title { get; set; } = string.Empty;
 
-        public string Genre { get; set; } = string.Empty;
+    public string Genre { get; set; } = string.Empty;
 
-        public int Duration { get; set; }
+    public int Duration { get; set; }
 
-        public DateTime ConsultTime { get; set; } = DateTime.Now;
-    }
+    public DateTime ConsultTime { get; set; } = DateTime.Now;
 }

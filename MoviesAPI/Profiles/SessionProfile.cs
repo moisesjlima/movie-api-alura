@@ -2,14 +2,13 @@
 using MoviesAPI.Data.Dtos;
 using MoviesAPI.Models;
 
-namespace MoviesAPI.Profiles
+namespace MoviesAPI.Profiles;
+
+public class SessionProfile : Profile
 {
-    public class SessionProfile : Profile
+    public SessionProfile()
     {
-        public SessionProfile()
-        {
-            CreateMap<CreateSessionDto, Session>();
-            CreateMap<ReadSessionDto, Session>().ReverseMap();
-        }
+        CreateMap<CreateSessionDto, Session>();
+        CreateMap<ReadSessionDto, Session>().ReverseMap();
     }
 }

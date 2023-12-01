@@ -19,4 +19,6 @@ public class Movie
     [Required(ErrorMessage = "field duration is required")]
     [Range(50, 600, ErrorMessage = "duration must be between 50 and 600")]
     public int Duration { get; set; }
+
+    public virtual ICollection<Session> Session { get; set; }
 }

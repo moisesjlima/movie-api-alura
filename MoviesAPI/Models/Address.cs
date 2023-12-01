@@ -1,17 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Models
+namespace MoviesAPI.Models;
+
+public class Address
 {
-    public class Address
-    {
-        [Key]
-        [Required]
-        public int AddressId { get; set; }
+    [Key]
+    [Required]
+    public int AddressId { get; set; }
 
-        public string PublicArea { get; set; } //Logradouro
+    public string PublicArea { get; set; }
 
-        public int Number { get; set; }
+    public int Number { get; set; }
 
-        public virtual MovieTheater MovieTheater { get; set; }
-    }
+    public virtual MovieTheater MovieTheater { get; set; }
 }
