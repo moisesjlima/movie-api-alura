@@ -10,8 +10,8 @@ using MoviesAPI.Data;
 namespace MoviesAPI.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20231201002031_Session and Movie")]
-    partial class SessionandMovie
+    [Migration("20231205233350_re-creating database")]
+    partial class recreatingdatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,9 +92,14 @@ namespace MoviesAPI.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
+                    b.Property<int>("MovieTheaterId")
+                        .HasColumnType("int");
+
                     b.HasKey("SessionId");
 
                     b.HasIndex("MovieId");
+
+                    b.HasIndex("MovieTheaterId");
 
                     b.ToTable("Sessions");
                 });
@@ -118,7 +123,15 @@ namespace MoviesAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MoviesAPI.Models.MovieTheater", "MovieTheater")
+                        .WithMany("Sessions")
+                        .HasForeignKey("MovieTheaterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Movie");
+
+                    b.Navigation("MovieTheater");
                 });
 
             modelBuilder.Entity("MoviesAPI.Models.Address", b =>
@@ -130,6 +143,11 @@ namespace MoviesAPI.Migrations
             modelBuilder.Entity("MoviesAPI.Models.Movie", b =>
                 {
                     b.Navigation("Session");
+                });
+
+            modelBuilder.Entity("MoviesAPI.Models.MovieTheater", b =>
+                {
+                    b.Navigation("Sessions");
                 });
 #pragma warning restore 612, 618
         }

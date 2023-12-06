@@ -10,6 +10,8 @@ public class MovieProfile : Profile
     {
         CreateMap<CreateMovieDto, Movie>().ReverseMap();
         CreateMap<UpdateMovieDto, Movie>().ReverseMap();
-        CreateMap<ReadMovieDto, Movie>().ReverseMap();
+        CreateMap<ReadMovieDto, Movie>().ReverseMap()
+          .ForMember(movieDto => movieDto.Sessions,
+           opt => opt.MapFrom(movie => movie.Session));
     }
 }
