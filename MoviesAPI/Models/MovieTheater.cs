@@ -16,5 +16,4 @@ public class MovieTheater
     public virtual Address Address { get; set; }
 
     public virtual ICollection<Session> Sessions { get; set; }
-
 }

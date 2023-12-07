@@ -2,7 +2,7 @@
 
 public class ReadSessionDto
 {
-    public int SessionId { get; set; }
-
     public int MovieId { get; set; }
+
+    public int MovieTheaterId { get; set; }
 }
