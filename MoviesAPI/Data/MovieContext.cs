@@ -28,6 +28,11 @@ public class MovieContext : DbContext
             .HasOne(session => session.MovieTheater)
             .WithMany(movieTheater => movieTheater.Sessions)
             .HasForeignKey(session => session.MovieTheaterId);
+
+        modelBuilder.Entity<Address>()
+            .HasOne(address => address.MovieTheater)
+            .WithOne(movieTheater => movieTheater.Address)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 
     public DbSet<Movie> Movies { get; set; }
